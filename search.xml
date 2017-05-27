@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[搭建个人Blog感受]]></title>
+    <url>%2F2017%2F05%2F27%2F%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BABlog%E6%84%9F%E5%8F%97-1%2F</url>
+    <content type="text"><![CDATA[&emsp;&emsp; 这个博客是从昨天下午2点开始着手搭建，一直做到今天下午，大约耗时10h，昨晚和峰兄讨论到凌晨2点才休息。 &emsp;&emsp; 所以，感觉初次搭建个人博客的还是蛮辛苦的，没有想象的轻松。 &emsp;&emsp; 希望写下这篇感受，能帮助更多想搭建Blog的朋友少走一些弯路。 前期准备： &emsp;&emsp; 我自己电脑的搭站环境是： GitNode.jsHexo 创建个人GitHub仓库： &emsp;&emsp; 登录到GitHub，若你没有账户，用邮箱注册即可 点击GitHub中的New repository， 这个就是你的个人仓库了，注意仓库名应该和你的GitHub用户名一样 如我的仓库名称 SuperPeterRui.github.io 我的账号名称也是 SuperPeterRui。 安装Git &emsp;&emsp; 什么是Git ? 简单来说Git是开源的分布式版本控制系统，用于敏捷高效地处理项目。我们网站在本地搭建好了，需要使用Git同步到GitHub上。 现在的机子基本都是64位的，选择64位的安装包，下载后安装，在命令行里输入git测试是否安装成功，若安装失败，参看其他详细的Git安装教程。安装成功后，将你的Git与GitHub帐号绑定，鼠标右击打开Git Bash. &emsp;&emsp; 你需要在黑色的终端里输入代码： git config --global user.name &quot;你的GitHub用户名&quot; git config --global user.email &quot;你的GitHub注册邮箱&quot; &emsp;&emsp; 生成ssh密钥文件： &emsp;&emsp; ssh-keygen -t rsa -C”你的GitHub注册邮箱” &emsp;&emsp; 然后直接三个回车即可， 默认不需要设置密码 &emsp;&emsp; 然后周到生成的.ssh的文件夹中的id_rsa.pub密钥，用写字本的方式打开，将内容全部复制 &emsp;&emsp; *之后你几乎的指令所有的操作基本都要在终端进行 &emsp;&emsp; 打开GitHub_Settings_keys 页面，新建new SSH Key &emsp;&emsp; Title为标题，任意填即可，将刚刚复制的id_rsa.pub内容粘贴进去，最后点击Add SSH key。在Git Bash中检测GitHub公钥设置是否成功，输入 ssh git@github.com 安装Node.js &emsp;&emsp; Hexo基于Node.js，Node.js下载地址：Download | Node.js 下载安装包，注意安装Node.js会包含环境变量及npm的安装，安装后，检测Node.js是否安装成功，在命令行中输入 node -v : &emsp;&emsp; &gt; 若显示v6. 10. 2 则成功 &emsp;&emsp; 检测npm是否安装成功，在命令行输入nom -v &emsp;&emsp; &gt; 若显示3. 10. 10 则成功 &emsp;&emsp; 以上就完成前期搭建准备，接下来我们继续： 安装Hexo &emsp;&emsp; Hexo就是我们的个人博客网站的框架， 这里需要自己在电脑常里创建一个文件夹，可以命名为Blog，Hexo框架与以后你自己发布的网页都在这个文件夹中。创建好后，进入文件夹中，按住shift键，右击鼠标点击命令行 &emsp;&emsp; 输入： &emsp;&emsp; install -g hexo-cli```1234&amp;emsp;&amp;emsp; 请耐心的等待，这里耗时有点长，安装好后，初始化我们的博客，输入：&amp;emsp;&amp;emsp; ```npm init blog &emsp;&emsp; 接着我们分别输入三条命令： hexo new test_my_site hexo g hexo s &emsp;&emsp; *之后我会单独写一片文章介绍相关指令 &emsp;&emsp; 完成后，打开你的浏览器输入地址： &emsp;&emsp; localhost：4000 &emsp;&emsp; 可以看到我们的第一篇博客 推送网站 &emsp;&emsp; 上面只是在本地预览，接下来要做的就是就是推送网站，也就是发布网站，让我们的网站可以被更多的人访问。在设置之前，需要解释一个概念，在blog根目录里的_config.yml文件称为站点配置文件，如下图 &emsp;&emsp; 进入根目录里的themes文件夹，里面也有个_config.yml文件，这个称为主题配置文件， &emsp;&emsp; 下一步将我们的Hexo与GitHub关联起来，打开站点的配置文件_config.yml（注意，一定要用写字本格式打开，不然格式很容易写错，hexo对格式要求非常严格），翻到最后修改为：deploy: type: gitrepo: 这里填入你之前在GitHub上创建仓库的完整路径，记得加上 .gitbranch: master参考如下： deploy: type: git repo: https://github.com/SuperPeterRui/SuperPeterRui.github.io.git branch: master &emsp;&emsp; 请注意每个冒号后面都有一个空格 &emsp;&emsp; 保存站点配置文件。 &emsp;&emsp; 其实就是给hexo d 这个命令做相应的配置，让hexo知道你要把blog部署在哪个位置，很显然，我们部署在我们GitHub的仓库里。最后安装Git部署插件，输入命令： &emsp;&emsp; npm install hexo-deployer-git --save &emsp;&emsp; 这时，我们分别输入三条命令： hexo clean hexo g hexo d &emsp;&emsp; 其实第三条的 hexo d 就是部署网站命令，d是deploy的缩写。完成后，打开浏览器，在地址栏输入你的放置个人网站的仓库路径，即 http://xxxx.github.io &emsp;&emsp; 你就会发现你的博客已经上线了，可以在网络上被访问了。 &emsp;&emsp; 先暂时写到这，慢慢更新。 2017/5/27 下午 4:10:21]]></content>
+      <categories>
+        <category>搭站</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+        <tag>感受</tag>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Welcome to Peters Blog]]></title>
+    <url>%2F2017%2F05%2F27%2FWelcome-to-Peter-s-Blog%2F</url>
+    <content type="text"><![CDATA[&emsp;&emsp; 写作缘由：一次深夜看到峰兄的博客悄然上线了，索性突发奇想自己也搭一个玩玩，养成写写博客文章的习惯，耗费一个下午加上一晚上的时间，一个简单的Blog就上线了，如你们现在所见。嗯，就这样。&emsp;&emsp; 感谢峰兄的指导帮助 说明 本文基于autoface网址，JAVA爬虫将网站中的用户头像爬下来并本地化储存 使用单线程爬取 使用Jsoup解析网页]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>介绍</tag>
+      </tags>
+  </entry>
+</search>
