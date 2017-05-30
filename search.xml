@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[test_video]]></title>
-    <url>%2F2017%2F05%2F30%2Ftest-video%2F</url>
-    <content type="text"><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title><![CDATA[解决港澳台海外无法收听QQ音乐等受限网站]]></title>
     <url>%2F2017%2F05%2F28%2F%E8%A7%A3%E5%86%B3%E6%B8%AF%E6%BE%B3%E5%8F%B0%E6%B5%B7%E5%A4%96%E6%97%A0%E6%B3%95%E6%94%B6%E5%90%ACQQ%E9%9F%B3%E4%B9%90%E7%AD%89%E5%8F%97%E9%99%90%E7%BD%91%E7%AB%99-1%2F</url>
     <content type="text"><![CDATA[我听说你的QQ音乐Ed Sheeran专辑在澳门播放不了？ 相信很多在海外或港澳台求学的朋友都遇到过一个问题—QQ音乐或网易云很多音乐都无法播放，bilibili，优酷很多视频都无法点播，导致很多美剧追不了，专辑听不了: 如这种情况 所以为了解决这个诟病的版权问题，需要利用国内VPN反向翻墙。 今天就介绍2种最常用也最简洁的方法： HTTP代理 浏览器打开“中国ip地址” cn-proxy.com 在服务器地址那一栏选择一个排行靠前的地址，比如 111.23.10.174，将其复制，然后记住其对应的端口 如80 打开手机的设置&gt; Wi-Fi&gt; 已连接Wi-Fi &gt; HTTP代理 &gt; 选择手动 &gt; 服务器那一栏粘贴之前的ip,端口填写你记住的数字 设置完成！ App:穿梭 这是一款公益性质的app，性能很稳定，网速很感人不受影响（公益能做到这一点很不容易了，毕竟流量非常烧钱），操作很简单。 GooglePlay下载 AppleStore下载 进入软件后点“一键穿越” 会跳出一个窗口 要求添加VPN的配置文件，点击allow 跳转到设置 VPN，输入你的手机密码 之后你会看到Wi-Fi信号旁边出现VPN，即代表连接成功，若要断开连接，点击已穿越即可 之后你的所有受限音乐，视频就全部解禁可以观看下载了。 效果如图： 希望对你有所帮助！ 感谢观看。]]></content>
